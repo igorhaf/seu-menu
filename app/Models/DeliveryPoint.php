@@ -10,11 +10,11 @@ class DeliveryPoint extends Model
 
     public function delivery_cities()
     {
-        return $this->hasOne('App\ModelsDeliveryCity', 'id', 'delivery_city_id');
+        return $this->hasOne('App\Models\DeliveryCity', 'id', 'delivery_city_id');
     }
 
     public function delivery_cities_visible()
     {
-        return $this->hasOne('App\ModelsDeliveryCity', 'id', 'delivery_city_id')->where('visible', true);
+        return $this->hasOne('App\Models\DeliveryCity', 'id', 'delivery_city_id')->where('visible', true);
     }
 }

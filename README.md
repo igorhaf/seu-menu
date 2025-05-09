@@ -1,63 +1,97 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Seu Menu  - Laravel Multi-Restaurant Delivery Web Pages
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este é um sistema de delivery online desenvolvido em Laravel, com suporte completo para múltiplos restaurantes. A plataforma permite que estabelecimentos gastronômicos se cadastrem, gerenciem seus cardápios, recebam pedidos e acompanhem entregas em tempo real.
 
-## About Laravel
+Funcionalidades Principais
+Cadastro e gerenciamento de múltiplos restaurantes
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Painel administrativo para restaurantes
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Cardápios dinâmicos com categorias, produtos e variações
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sistema de pedidos com status (pendente, em preparo, enviado, entregue)
 
-## Learning Laravel
+Cadastro de clientes com login e histórico de pedidos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Suporte a diferentes métodos de pagamento
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+API RESTful para integração com apps móveis ou frontend externo (em desenvolvimento)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Tecnologias Utilizadas
+Laravel 12
 
-## Laravel Sponsors
+PHP 8+
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Docker / Docker Compose
 
-### Premium Partners
+PostgreSQL
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+Nginx
 
-## Contributing
+Blade (com Bootstrap, Tailwind)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+JWT ou Sanctum (para autenticação via API)
 
-## Code of Conduct
+Instalação
+bash
+Copiar
+Editar
+# Clone o repositório
+git clone https://github.com/seu-usuario/laravel-delivery.git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Acesse a pasta do projeto
+cd laravel-delivery
 
-## Security Vulnerabilities
+# Instale as dependências
+composer install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Copie o arquivo .env e configure
+cp .env.example .env
 
-## License
+# Gere a chave da aplicação
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# seu-menu
-# seu-menu
+# Configure o banco de dados no .env e rode as migrations
+php artisan migrate --seed
+
+# Inicie o servidor de desenvolvimento
+php artisan serve
+Ambiente com Docker (opcional)
+bash
+Copiar
+Editar
+# Inicie os containers
+docker-compose up -d --build
+
+# Acesse o container para rodar comandos Artisan
+docker exec -it app php artisan migrate --seed
+Autenticação
+Admins e restaurantes: via painel (web)
+
+Clientes: via web e API
+
+Tokens de acesso protegidos por Laravel Sanctum (ou JWT)
+
+Estrutura Modular (sugestão)
+app/Models/Restaurant.php
+
+app/Http/Controllers/Restaurant/OrderController.php
+
+app/Http/Controllers/API/ClientController.php
+
+routes/web.php e routes/api.php
+
+Futuro (roadmap)
+Integração com gateways de pagamento (ex: Stripe, Pix)
+
+Sistema de avaliação dos pedidos
+
+Painel para entregadores (logística de entrega)
+
+Contribuição
+Pull requests são bem-vindos! Para grandes mudanças, por favor abra uma issue primeiro para discutirmos o que você deseja modificar.
+
+Licença
+Este projeto está sob a licença MIT.
+
+Deseja que eu adapte isso com base no nome real da sua aplicação ou informações do seu composer.json?
