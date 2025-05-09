@@ -1,0 +1,5 @@
+.bg-login-image{
+    background: url("../../img/logo-pisu.jpg");
+    background-position: center;
+    background-size: cover;
+}
